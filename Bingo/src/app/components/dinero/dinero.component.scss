@@ -1,0 +1,20 @@
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Opcional: ajusta la altura según tus necesidades */
+  
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  background-color: rgb(222, 238, 238); 
+  width: 100%;
+}
