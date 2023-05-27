@@ -1,0 +1,34 @@
+2023-05-27 00:25:10 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Bojtronic\Documents\TRABAJO\Bingo\Bingo\Bingo_API\node_modules\node-windows\lib\wrapper.js --file C:\Users\Bojtronic\Documents\TRABAJO\Bingo\Bingo\Bingo_API\index.js --scriptoptions= --log "Bingo_API wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2023-05-27 00:25:10 - Started 3748
+2023-05-27 00:40:32 - Stopping bingo_api.exe
+2023-05-27 00:40:32 - ProcessKill 3748
+2023-05-27 00:40:32 - Found child process: 8444 Name: conhost.exe
+2023-05-27 00:40:32 - Found child process: 4624 Name: node.exe
+2023-05-27 00:40:32 - Stopping process 8444
+2023-05-27 00:40:32 - Send SIGINT 8444
+2023-05-27 00:40:32 - SIGINT to 8444 failed - Killing as fallback
+2023-05-27 00:40:33 - Stopping process 4624
+2023-05-27 00:40:33 - Send SIGINT 4624
+2023-05-27 00:40:33 - SIGINT to 4624 failed - Killing as fallback
+2023-05-27 00:40:33 - Stopping process 3748
+2023-05-27 00:40:33 - Send SIGINT 3748
+2023-05-27 00:40:33 - SIGINT to 3748 failed - Killing as fallback
+2023-05-27 00:40:33 - Finished bingo_api.exe
+2023-05-27 00:40:50 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Bojtronic\Documents\TRABAJO\Bingo\Bingo\Bingo_API\node_modules\node-windows\lib\wrapper.js --file C:\Users\Bojtronic\Documents\TRABAJO\Bingo\Bingo\Bingo_API\index.js --scriptoptions= --log "Bingo_API wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2023-05-27 00:40:50 - Started 7596
+2023-05-27 15:14:27 - Stopping bingo_api.exe
+2023-05-27 15:14:27 - ProcessKill 7596
+2023-05-27 15:14:28 - Found child process: 5888 Name: conhost.exe
+2023-05-27 15:14:28 - Found child process: 9024 Name: node.exe
+2023-05-27 15:14:28 - Stopping process 5888
+2023-05-27 15:14:28 - Send SIGINT 5888
+2023-05-27 15:14:28 - SIGINT to 5888 failed - Killing as fallback
+2023-05-27 15:14:28 - Stopping process 9024
+2023-05-27 15:14:28 - Send SIGINT 9024
+2023-05-27 15:14:28 - SIGINT to 9024 failed - Killing as fallback
+2023-05-27 15:14:28 - Stopping process 7596
+2023-05-27 15:14:28 - Send SIGINT 7596
+2023-05-27 15:14:28 - SIGINT to 7596 failed - Killing as fallback
+2023-05-27 15:14:28 - Finished bingo_api.exe
+2023-05-27 15:22:59 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Bojtronic\Documents\TRABAJO\Bingo\Bingo\Bingo_API\node_modules\node-windows\lib\wrapper.js --file C:\Users\Bojtronic\Documents\TRABAJO\Bingo\Bingo\Bingo_API\index.js --scriptoptions= --log "Bingo_API wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2023-05-27 15:22:59 - Started 1624
