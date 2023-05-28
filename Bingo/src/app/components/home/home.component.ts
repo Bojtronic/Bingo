@@ -22,6 +22,7 @@ export class HomeComponent {
     this.router.navigate(['/dinero']);
   }
   
+  //funcion de prueba
   test(){
     this.usuarios = [];
     this.testService.getUsuarios().subscribe ((data: usuario_model[]) => {
