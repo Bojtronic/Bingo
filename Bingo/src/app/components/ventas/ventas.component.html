@@ -4,6 +4,23 @@
     </button>   
 </div>
 
-<mat-card class="image-container">
-    <img src="assets/VentasLogo.png" alt="LogoHome" />
-</mat-card>
+
+<form class="example-form">
+    <mat-form-field style="width: 85%;">
+      <mat-label>Comidas / Bebidas</mat-label>
+      <input type="text" matInput [formControl]="myControl" [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+          {{option.nombre}} >>> {{option.precio}} colones  ---  Disponible {{option.cantidad}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+
+    <mat-form-field style="width: 15%;">
+        <mat-label>Cantidad</mat-label>
+        <input matInput type="number" #cantidad maxlength="2" placeholder="Cantidad" value="1">
+    </mat-form-field>
+</form>
+
+<button mat-raised-button>Confirmar venta</button>
+  
