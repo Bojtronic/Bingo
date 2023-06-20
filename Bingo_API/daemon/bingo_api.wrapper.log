@@ -32,3 +32,37 @@
 2023-05-27 15:14:28 - Finished bingo_api.exe
 2023-05-27 15:22:59 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Bojtronic\Documents\TRABAJO\Bingo\Bingo\Bingo_API\node_modules\node-windows\lib\wrapper.js --file C:\Users\Bojtronic\Documents\TRABAJO\Bingo\Bingo\Bingo_API\index.js --scriptoptions= --log "Bingo_API wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
 2023-05-27 15:22:59 - Started 1624
+2023-06-10 10:17:58 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Bojtronic\Documents\TRABAJO\Bingo\Bingo\Bingo_API\node_modules\node-windows\lib\wrapper.js --file C:\Users\Bojtronic\Documents\TRABAJO\Bingo\Bingo\Bingo_API\index.js --scriptoptions= --log "Bingo_API wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2023-06-10 10:17:58 - Started 4312
+2023-06-17 17:30:46 - Stopping bingo_api.exe
+2023-06-17 17:30:46 - ProcessKill 4312
+2023-06-17 17:30:47 - Shutdown exception
+Message:Se está cerrando el sistema.
+
+Stacktrace:   en System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   en System.Management.ManagementScope.InitializeGuts(Object o)
+   en System.Management.ManagementScope.Initialize()
+   en System.Management.ManagementObjectSearcher.Initialize()
+   en System.Management.ManagementObjectSearcher.Get()
+   en winsw.WrapperService.GetChildPids(Int32 pid)
+   en winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   en winsw.WrapperService.StopIt()
+   en winsw.WrapperService.OnShutdown()
+2023-06-17 17:31:23 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Bojtronic\Documents\TRABAJO\Bingo\Bingo\Bingo_API\node_modules\node-windows\lib\wrapper.js --file C:\Users\Bojtronic\Documents\TRABAJO\Bingo\Bingo\Bingo_API\index.js --scriptoptions= --log "Bingo_API wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2023-06-17 17:31:23 - Started 4552
+2023-06-17 17:34:25 - Stopping bingo_api.exe
+2023-06-17 17:34:25 - ProcessKill 4552
+2023-06-17 17:34:25 - Shutdown exception
+Message:Clase no registrada
+
+Stacktrace:   en System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   en System.Management.ManagementScope.InitializeGuts(Object o)
+   en System.Management.ManagementScope.Initialize()
+   en System.Management.ManagementObjectSearcher.Initialize()
+   en System.Management.ManagementObjectSearcher.Get()
+   en winsw.WrapperService.GetChildPids(Int32 pid)
+   en winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   en winsw.WrapperService.StopIt()
+   en winsw.WrapperService.OnShutdown()
+2023-06-17 18:01:30 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Bojtronic\Documents\TRABAJO\Bingo\Bingo\Bingo_API\node_modules\node-windows\lib\wrapper.js --file C:\Users\Bojtronic\Documents\TRABAJO\Bingo\Bingo\Bingo_API\index.js --scriptoptions= --log "Bingo_API wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2023-06-17 18:01:30 - Started 4288
