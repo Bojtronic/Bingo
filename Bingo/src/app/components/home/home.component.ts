@@ -18,6 +18,10 @@ export class HomeComponent {
     this.router.navigate(['/ventas']);
   }
 
+  cartones(){
+    this.router.navigate(['/cartones']);
+  }
+
   dinero(){
     this.router.navigate(['/dinero']);
   }

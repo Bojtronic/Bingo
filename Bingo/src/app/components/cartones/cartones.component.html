@@ -1,0 +1,35 @@
+<div class="button-container">
+    <button mat-icon-button style="background-color: aqua;" (click)="home()">
+        <mat-icon>home</mat-icon>
+    </button>   
+</div>
+
+<br>
+<br>
+
+
+<div style="display: flex; justify-content: center;">
+    <form class="order-form">
+        <mat-form-field>
+            <mat-label>CARTONES</mat-label>
+            <input matInput type="number" #cantidad maxlength="2" placeholder="Cantidad de cartones" value="0">
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>PROMOS</mat-label>
+            <input matInput type="number" #cantidad maxlength="2" placeholder="Cantidad de promos" value="0">
+        </mat-form-field>
+    </form>
+</div>
+  
+<div style="display: flex; justify-content: center;">
+   <button mat-raised-button>Confirmar venta</button>
+</div>
+
+<br>
+<br>
+
+<div style="display: flex; justify-content: center;">
+    <mat-label>Total a pagar: {{total}}</mat-label>
+</div>
+    

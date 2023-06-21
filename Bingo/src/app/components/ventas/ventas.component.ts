@@ -24,6 +24,8 @@ export class VentasComponent implements OnInit{
 
   filteredOptions: Observable<comida_model[]> | undefined;
   
+  total:number = 0;
+  
   constructor(private router: Router) {}
   
   home(){

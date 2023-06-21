@@ -18,13 +18,15 @@ import { HomeComponent } from './components/home/home.component';
 import { VentasComponent } from './components/ventas/ventas.component';
 import { DineroComponent } from './components/dinero/dinero.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CartonesComponent } from './components/cartones/cartones.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     VentasComponent,
-    DineroComponent
+    DineroComponent,
+    CartonesComponent
   ],
   imports: [
     BrowserModule,
