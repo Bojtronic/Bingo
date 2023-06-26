@@ -13,8 +13,8 @@
         <mat-label>Comidas / Bebidas</mat-label>
         <input type="text" matInput [formControl]="myControl" [matAutocomplete]="auto">
         <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
-          <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-            {{option.nombre}} >>> {{option.precio}} colones  ---  Disponible {{option.cantidad}}
+          <mat-option *ngFor="let comida of filteredOptions | async" [value]="comida" (click)="selectedComida = comida">
+            {{comida.nombre}} >>> Disponible {{comida.cantidad}}  ---  {{comida.precio}} colones 
           </mat-option>
         </mat-autocomplete>
       </mat-form-field>
@@ -27,7 +27,7 @@
 </div>
 
 <div style="display: flex; justify-content: center;">
-  <button mat-raised-button>Confirmar venta</button>
+  <button mat-raised-button (click)="calcular_total(+selectedComida.precio, +cantidad.value)">Confirmar venta</button>
 </div>
 
 <br>

@@ -8,7 +8,7 @@ import { comida_model } from 'src/app/models/comida_model';
 })
 export class ComidaService {
 
-  URL_usuarios: string = "http://localhost:3000/api/comida/"; 
+  URL_usuarios: string = "http://localhost:4000/api/comidas/"; 
   
   constructor(private http: HttpClient) { }
 
