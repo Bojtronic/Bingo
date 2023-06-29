@@ -1,4 +1,5 @@
 CREATE TABLE comida (
+    id serial primary key,
     nombre varchar(50),
     cantidad integer,
     precio integer

@@ -32,7 +32,7 @@ export class VentasComponent implements OnInit{
   total:number = 0;
   cantidad:number = 0;
   precio:number = 0;
-  selectedComida: comida_model = {nombre:"", precio:0, cantidad:0};
+  selectedComida: comida_model = {id:0, nombre:"", precio:0, cantidad:0};
   
   constructor(private router: Router, private comidaService:ComidaService) {}
   
@@ -83,5 +83,15 @@ export class VentasComponent implements OnInit{
     
   }
 
-  
+  confirmar_venta(id:number, nombre:string, precio:number, cantidad_existente:number, cantidad_compra:number){
+    this.calcular_total(precio, cantidad_compra)
+    let comida_actualizada = {id:id, nombre:nombre, precio:precio, cantidad:cantidad_existente-cantidad_compra}
+    this.comidaService.editComida(comida_actualizada).subscribe(results => {
+      window.location.reload();
+      }
+    );
+    window.location.reload();
+    }
+   
 }
+

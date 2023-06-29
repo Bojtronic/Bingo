@@ -12,12 +12,22 @@
     <form class="order-form">
         <mat-form-field>
             <mat-label>CARTONES</mat-label>
-            <input matInput type="number" #cantidad maxlength="2" placeholder="Cantidad de cartones" value="0">
+            <input matInput type="number" #cantidad_cartones maxlength="2" placeholder="Cantidad de cartones" value="0" (change)="calcular_total(+cantidad_cartones.value, +cantidad_promos_1.value, +cantidad_promos_2.value, +cantidad_promos_3.value)">
         </mat-form-field>
 
         <mat-form-field>
-            <mat-label>PROMOS</mat-label>
-            <input matInput type="number" #cantidad maxlength="2" placeholder="Cantidad de promos" value="0">
+            <mat-label>PROMO #1</mat-label>
+            <input matInput type="number" #cantidad_promos_1 maxlength="2" placeholder="Cantidad de promos #1" value="0" (change)="calcular_total(+cantidad_cartones.value, +cantidad_promos_1.value, +cantidad_promos_2.value, +cantidad_promos_3.value)">
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>PROMO #2</mat-label>
+            <input matInput type="number" #cantidad_promos_2 maxlength="2" placeholder="Cantidad de promos #2" value="0" (change)="calcular_total(+cantidad_cartones.value, +cantidad_promos_1.value, +cantidad_promos_2.value, +cantidad_promos_3.value)">
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>PROMO #3</mat-label>
+            <input matInput type="number" #cantidad_promos_3 maxlength="2" placeholder="Cantidad de promos #3" value="0" (change)="calcular_total(+cantidad_cartones.value, +cantidad_promos_1.value, +cantidad_promos_2.value, +cantidad_promos_3.value)">
         </mat-form-field>
     </form>
 </div>
@@ -31,5 +41,24 @@
 
 <div style="display: flex; justify-content: center;">
     <mat-label>Total a pagar: {{total}}</mat-label>
+</div>
+
+<br>
+<br>
+
+<div style="display: flex; justify-content: center;">
+    <mat-label style="font-size: 24px; font-family: 'Arial Black', sans-serif;">Precio del carton: 1000 colones</mat-label>
+</div>
+<br>
+<div style="display: flex; justify-content: center;">
+    <mat-label style="font-size: 24px; font-family: 'Arial Black', sans-serif;">Promo #1: 6 cartones por 5000 colones</mat-label>
+</div>
+<br>
+<div style="display: flex; justify-content: center;">
+    <mat-label style="font-size: 24px; font-family: 'Arial Black', sans-serif;">Promo #2: 10 cartones por 8000 colones</mat-label>
+</div>
+<br>
+<div style="display: flex; justify-content: center;">
+    <mat-label style="font-size: 24px; font-family: 'Arial Black', sans-serif;">Promo #3: 15 cartones por 10000 colones</mat-label>
 </div>
     
