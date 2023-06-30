@@ -43,16 +43,18 @@ export class CartonesComponent {
     let total_cartones:number = cantidad_individuales + (cantidad_promos_1*6) + (cantidad_promos_2*12)
     let total_a_cobrar:number = this.total
 
-    let carton_update:carton_model = {id:1, cantidad_disponible: this.cartones_disponibles-total_cartones ,precio_unitario:1000}
+    let carton_update:carton_model = {id:1 ,precio_unitario:1000, cantidad_disponible: (this.cartones_disponibles-total_cartones)}
     this.compra_cartonService.editCartones_disponibles(carton_update).subscribe(results => {
       console.log("se actualizó la cantidad de cartones")
-    })
+    });
+
     let compra_carton:compra_carton_model = {individuales:cantidad_individuales, promo_1:cantidad_promos_1, promo_2:cantidad_promos_2, total_cartones:total_cartones, total_a_cobrar:total_a_cobrar}
     this.compra_cartonService.addCompra_carton(compra_carton).subscribe(results => {
       window.location.reload();
       }
     );
     //window.location.reload();
+    this.cartones_disponibles = this.cartones_disponibles-total_cartones;
     }
     
 }

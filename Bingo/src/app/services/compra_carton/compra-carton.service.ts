@@ -19,7 +19,7 @@ export class CompraCartonService {
   }
 
   editCartones_disponibles(cartones_disponibles: carton_model): Observable<carton_model>{
-    return this.http.put<carton_model>(this.URL_compra_cartones, cartones_disponibles);
+    return this.http.put<carton_model>(this.URL_cartones_disponibles, cartones_disponibles);
   }
 
   getCompra_carton(): Observable<compra_carton_model[]> {
