@@ -3,7 +3,7 @@ const controller = require('../controllers/carton_controller');
 
 const router = Router();
 
-router.get('/', controller.get);
-router.post("/", controller.add);
+router.get('/:id', controller.get);
+router.put("/:id", controller.update);
 
 module.exports = router;

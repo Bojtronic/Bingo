@@ -4,6 +4,7 @@ const cors = require('cors');
 const userRoute = require('./src/routes/user_route');
 const comidaRoute = require('./src/routes/comida_route');
 const cartonRoute = require('./src/routes/carton_route');
+const compra_cartonRoute = require('./src/routes/compra_carton_route');
 
 
 const app = express();
@@ -17,6 +18,7 @@ app.use(cors({ origin: '*' }));
 app.use('/api/usuarios', userRoute);
 app.use('/api/comidas', comidaRoute);
 app.use('/api/cartones', cartonRoute);
+app.use('/api/compra_cartones', compra_cartonRoute);
 
 
 app.listen(port, () => console.log(`listening on port ${port}`));

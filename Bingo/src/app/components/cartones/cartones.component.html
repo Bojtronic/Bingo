@@ -7,33 +7,34 @@
 <br>
 <br>
 
+<div style="display: flex; justify-content: center;">
+    <mat-label>Cartones disponibles: {{cartones_disponibles}}</mat-label>
+</div>
+
+<br>
+<br>
 
 <div style="display: flex; justify-content: center;">
     <form class="order-form">
         <mat-form-field>
             <mat-label>CARTONES</mat-label>
-            <input matInput type="number" #cantidad_cartones maxlength="2" placeholder="Cantidad de cartones" value="0" (change)="calcular_total(+cantidad_cartones.value, +cantidad_promos_1.value, +cantidad_promos_2.value, +cantidad_promos_3.value)">
+            <input matInput type="number" #cantidad_cartones maxlength="2" placeholder="Cantidad de cartones" value="0" (change)="calcular_total(+cantidad_cartones.value, +cantidad_promos_1.value, +cantidad_promos_2.value)">
         </mat-form-field>
 
         <mat-form-field>
             <mat-label>PROMO #1</mat-label>
-            <input matInput type="number" #cantidad_promos_1 maxlength="2" placeholder="Cantidad de promos #1" value="0" (change)="calcular_total(+cantidad_cartones.value, +cantidad_promos_1.value, +cantidad_promos_2.value, +cantidad_promos_3.value)">
+            <input matInput type="number" #cantidad_promos_1 maxlength="2" placeholder="Cantidad de promos #1" value="0" (change)="calcular_total(+cantidad_cartones.value, +cantidad_promos_1.value, +cantidad_promos_2.value)">
         </mat-form-field>
 
         <mat-form-field>
             <mat-label>PROMO #2</mat-label>
-            <input matInput type="number" #cantidad_promos_2 maxlength="2" placeholder="Cantidad de promos #2" value="0" (change)="calcular_total(+cantidad_cartones.value, +cantidad_promos_1.value, +cantidad_promos_2.value, +cantidad_promos_3.value)">
-        </mat-form-field>
-
-        <mat-form-field>
-            <mat-label>PROMO #3</mat-label>
-            <input matInput type="number" #cantidad_promos_3 maxlength="2" placeholder="Cantidad de promos #3" value="0" (change)="calcular_total(+cantidad_cartones.value, +cantidad_promos_1.value, +cantidad_promos_2.value, +cantidad_promos_3.value)">
+            <input matInput type="number" #cantidad_promos_2 maxlength="2" placeholder="Cantidad de promos #2" value="0" (change)="calcular_total(+cantidad_cartones.value, +cantidad_promos_1.value, +cantidad_promos_2.value)">
         </mat-form-field>
     </form>
 </div>
   
 <div style="display: flex; justify-content: center;">
-   <button mat-raised-button>Confirmar venta</button>
+   <button mat-raised-button (click)="confirmar_venta(+cantidad_cartones.value, +cantidad_promos_1.value, +cantidad_promos_2.value)">Confirmar venta</button>
 </div>
 
 <br>
@@ -55,10 +56,6 @@
 </div>
 <br>
 <div style="display: flex; justify-content: center;">
-    <mat-label style="font-size: 24px; font-family: 'Arial Black', sans-serif;">Promo #2: 10 cartones por 8000 colones</mat-label>
-</div>
-<br>
-<div style="display: flex; justify-content: center;">
-    <mat-label style="font-size: 24px; font-family: 'Arial Black', sans-serif;">Promo #3: 15 cartones por 10000 colones</mat-label>
+    <mat-label style="font-size: 24px; font-family: 'Arial Black', sans-serif;">Promo #2: 12 cartones por 10000 colones</mat-label>
 </div>
     

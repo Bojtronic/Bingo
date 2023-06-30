@@ -1,5 +1,5 @@
 const pool = require("../../database");
-const queries = require('../queries/comida_query');
+const queries = require('../queries/compra_carton_query');
 
 const get = (req, res) => {
     pool.query(queries.get, (error, results) => {
@@ -10,22 +10,12 @@ const get = (req, res) => {
 
 
 const add = (req, res) => {
-    const { nombre, precio, cantidad } = req.body;
-
-    pool.query(queries.getById, [id], (error, results) => {
-        const notFound = !results.rows.length;
-        if (notFound) {
-            res.status(404).json("No existe en la base de datos");
-            return;
-        }
-        pool.query(queries.add, [nombre, precio, cantidad], (error, results) => {
-            if (error) throw error;
-            res.status(201).json('creado exitosamente');
-        });
-    }); 
+    const { individuales, promo_1, promo_2, total_cartones, total_a_cobrar } = req.body;
+    pool.query(queries.add, [individuales, promo_1, promo_2, total_cartones, total_a_cobrar], (error, results) => {
+        if (error) throw error;
+        res.status(201).json('creado exitosamente');
+    });
 };
-
-
 
 
 const getById = (req, res) => {
@@ -53,15 +43,15 @@ const remove = (req, res) => {
 };
 
 const update = (req, res) => {
-    const id = parseInt(req.params.id);
-    const { id_, nombre, precio, cantidad } = req.body;
+    const id_ = parseInt(req.params.id);
+    const { id , individuales, promo_1, promo_2, total_cartones, total_a_cobrar } = req.body;
     pool.query(queries.getById, [id], (error, results) => {
         const notFound = !results.rows.length;
         if (notFound) {
             res.status(404).json("No existe en la base de datos");
             return;
         }
-        pool.query(queries.update, [nombre, precio, cantidad, id], (error, results) => {
+        pool.query(queries.update, [individuales, promo_1, promo_2, total_cartones, total_a_cobrar, id_], (error, results) => {
             if (error) throw error;
             res.status(200).json("Actualizado exitosamente");
         });
@@ -74,5 +64,5 @@ module.exports = {
     getById,
     add,
     remove,
-    update,
+    update
 }

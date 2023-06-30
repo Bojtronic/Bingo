@@ -1,8 +1,11 @@
-const get = "SELECT precio, cantidad FROM carton";
-const add = "INSERT INTO carton (precio, cantidad) VALUES ($1, $2)";
+const get = "SELECT id, precio_unitario, cantidad_disponible FROM carton";
+const update = "UPDATE carton SET cantidad_disponible = $1 WHERE id = $2";
+const getById = "SELECT id, precio_unitario, cantidad_disponible FROM carton WHERE id = $1";
+
 
 
 module.exports = {
     get,
-    add
+    update,
+    getById
 }
