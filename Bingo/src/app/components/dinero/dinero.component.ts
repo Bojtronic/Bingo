@@ -14,6 +14,7 @@ export class DineroComponent {
   ventas:venta_model[] = []
   displayedColumns: string[] = ['id', 'producto', 'cantidad', 'total'];
   dataSource = this.ventas;
+  total:number = 0;
 
   constructor(private router: Router, private comidaService:ComidaService) {}
   
@@ -25,6 +26,7 @@ export class DineroComponent {
       lista = data;
       for (let venta of lista) {
         this.ventas.push(venta);
+        this.total += venta.total;
       }
       this.dataSource = this.ventas;     
     });
