@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { carton_model } from 'src/app/models/carton_model';
 import { compra_carton_model } from 'src/app/models/compra_carton_model';
+import { venta_model } from 'src/app/models/venta_model';
+import { ComidaService } from 'src/app/services/comida/comida.service';
 import { CompraCartonService } from 'src/app/services/compra_carton/compra-carton.service';
 
 @Component({
@@ -16,12 +18,11 @@ export class CartonesComponent {
   precio:number = 0;
   cartones_disponibles:number = 0;
   
-  constructor(private router: Router, private compra_cartonService:CompraCartonService) {}
+  constructor(private router: Router, private compra_cartonService:CompraCartonService, private comidaService:ComidaService) {}
   
   ngOnInit() {
     this.compra_cartonService.getCartones_disponibles().subscribe((data: carton_model[]) => {
       this.cartones_disponibles = data[0].cantidad_disponible;
-      console.log(data)
     })
   }
 
@@ -43,10 +44,15 @@ export class CartonesComponent {
     let total_cartones:number = cantidad_individuales + (cantidad_promos_1*6) + (cantidad_promos_2*12)
     let total_a_cobrar:number = this.total
 
-    let carton_update:carton_model = {id:1 ,precio_unitario:1000, cantidad_disponible: (this.cartones_disponibles-total_cartones)}
+    let carton_update:carton_model = {id:1, cantidad_disponible: (this.cartones_disponibles-total_cartones), precio_unitario:1000}
     this.compra_cartonService.editCartones_disponibles(carton_update).subscribe(results => {
       console.log("se actualizó la cantidad de cartones")
     });
+
+    let venta:venta_model = {producto: "Cartones", cantidad:total_cartones , total:total_a_cobrar }
+    this.comidaService.addVenta_Comida(venta).subscribe(results => {
+      //window.location.reload();
+    })
 
     let compra_carton:compra_carton_model = {individuales:cantidad_individuales, promo_1:cantidad_promos_1, promo_2:cantidad_promos_2, total_cartones:total_cartones, total_a_cobrar:total_a_cobrar}
     this.compra_cartonService.addCompra_carton(compra_carton).subscribe(results => {

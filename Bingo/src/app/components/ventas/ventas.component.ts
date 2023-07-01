@@ -5,8 +5,7 @@ import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
 import { comida_model } from 'src/app/models/comida_model';
 import { ComidaService } from 'src/app/services/comida/comida.service';
-
-
+import { venta_model } from 'src/app/models/venta_model';
 
 
 
@@ -17,15 +16,9 @@ import { ComidaService } from 'src/app/services/comida/comida.service';
 })
 export class VentasComponent implements OnInit{
 
+  
   myControl = new FormControl<string | comida_model>('');
   comidas: comida_model[] = [];
-
-  /*
-  comidas: comida_model[] = [
-    {nombre: 'Cajeta', precio: 500, cantidad: 30}, 
-    {nombre: 'Arroz con leche', precio: 500, cantidad: 50}, 
-    {nombre: 'Cafe', precio: 300, cantidad: 50}];
-  */
 
   filteredOptions: Observable<comida_model[]> | undefined;
   
@@ -33,7 +26,11 @@ export class VentasComponent implements OnInit{
   cantidad:number = 0;
   precio:number = 0;
   selectedComida: comida_model = {id:0, nombre:"", precio:0, cantidad:0};
+  comidas_compradas:comida_model[] = [];
   
+  menu = new FormControl('');
+  menuList: string[] = [];
+
   constructor(private router: Router, private comidaService:ComidaService) {}
   
 
@@ -46,7 +43,10 @@ export class VentasComponent implements OnInit{
       lista = data;
       for (let comida of lista) {
         this.comidas.push(comida);
+        this.menuList.push(comida.nombre);
       }
+      
+      
       
       this.filteredOptions = this.myControl.valueChanges.pipe(
         startWith(''),
@@ -83,15 +83,30 @@ export class VentasComponent implements OnInit{
     
   }
 
+  agregar_a_lista(id:number, nombre:string, precio:number, cantidad:number){
+    let comida:comida_model = {id:id , nombre:nombre , precio:precio*cantidad , cantidad:cantidad }
+    this.comidas_compradas.push(comida);
+    this.total += comida.precio
+     
+  }
+
   confirmar_venta(id:number, nombre:string, precio:number, cantidad_existente:number, cantidad_compra:number){
-    this.calcular_total(precio, cantidad_compra)
+    //this.calcular_total(precio, cantidad_compra)
     let comida_actualizada = {id:id, nombre:nombre, precio:precio, cantidad:cantidad_existente-cantidad_compra}
     this.comidaService.editComida(comida_actualizada).subscribe(results => {
       window.location.reload();
       }
     );
-    window.location.reload();
+
+    for (let comida of this.comidas_compradas) {
+      let venta:venta_model = {producto: comida.nombre, cantidad:comida.cantidad , total:comida.precio }
+      this.comidaService.addVenta_Comida(venta).subscribe(results => {
+      //window.location.reload();
+    })
     }
+
+    
+  }
    
 }
 

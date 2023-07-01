@@ -25,6 +25,10 @@ export class HomeComponent {
   dinero(){
     this.router.navigate(['/dinero']);
   }
+
+  agregar(){
+    this.router.navigate(['/agregar']);
+  }
   
   //funcion de prueba
   test(){

@@ -8,49 +8,47 @@
 <br>
 
 <div style="display: flex; justify-content: center;">
-  <form class="order-form">
+  <td style="width: 60%;">
+    <form class="order-form">
       <mat-form-field style="width: 70%;">
         <mat-label>Comidas / Bebidas</mat-label>
         <input type="text" matInput [formControl]="myControl" [matAutocomplete]="auto">
         <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
-          <mat-option *ngFor="let comida of filteredOptions | async" [value]="comida" (click)="selectedComida = comida" (click)="calcular_total(+selectedComida.precio, +cantidad.value)">
+          <mat-option *ngFor="let comida of filteredOptions | async" [value]="comida" (click)="selectedComida = comida">
             {{comida.nombre}} >>> Disponible {{comida.cantidad}}  ---  {{comida.precio}} colones 
           </mat-option>
         </mat-autocomplete>
       </mat-form-field>
-
+  
       <mat-form-field style="width: 30%;">
           <mat-label>Cantidad</mat-label>
-          <input matInput type="number" #cantidad maxlength="2" placeholder="Cantidad" value="1" (change)="calcular_total(+selectedComida.precio, +cantidad.value)">
+          <input matInput type="number" #cantidad maxlength="2" placeholder="Cantidad" value="1">
       </mat-form-field>
   </form>
-</div>
+    
+    
+    <br>
+    
+    <div style="display: flex; justify-content: center;">
+      <button mat-raised-button (click)="agregar_a_lista(+selectedComida.id, selectedComida.nombre,+selectedComida.precio, +cantidad.value)">Agregar a la lista de compras</button>
+    </div>
 
-<br>
+    <br>
+    <br>
 
-<div style="display: flex; justify-content: center;">
-  <form class="order-form">
-      <mat-form-field style="width: 70%;">
-        <mat-label>Combos</mat-label>
-        <input type="text" matInput [formControl]="myControl" [matAutocomplete]="auto">
-        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
-          <mat-option *ngFor="let comida of filteredOptions | async" [value]="comida" (click)="selectedComida = comida" (click)="calcular_total(+selectedComida.precio, +cantidad.value)">
-            {{comida.nombre}} >>> Disponible {{comida.cantidad}}  ---  {{comida.precio}} colones 
-          </mat-option>
-        </mat-autocomplete>
-      </mat-form-field>
+    <div style="display: flex; justify-content: center;">
+      <button mat-raised-button (click)="comidas_compradas = []" (click)="total = 0">Borrar lista</button>
+    </div>
+    
+  </td>
+  <td style="width: 60%;">
 
-      <mat-form-field style="width: 30%;">
-          <mat-label>Cantidad de combos</mat-label>
-          <input matInput type="number" #cantidad maxlength="2" placeholder="Cantidad de combos" value="1" (change)="calcular_total(+selectedComida.precio, +cantidad.value)">
-      </mat-form-field>
-  </form>
-</div>
-
-<br>
-
-<div style="display: flex; justify-content: center;">
-  <button mat-raised-button (click)="confirmar_venta(+selectedComida.id, selectedComida.nombre,+selectedComida.precio, +selectedComida.cantidad, +cantidad.value)">Agregar a la lista de compras</button>
+    <mat-list>
+      <mat-list-item *ngFor="let comidas_compradas of comidas_compradas">
+        Comida/Bebida: {{ comidas_compradas.nombre }} - Cantidad: {{ comidas_compradas.cantidad }} - Precio: {{ comidas_compradas.precio }}
+      </mat-list-item>
+    </mat-list> 
+  </td>
 </div>
 
 <br>
@@ -69,3 +67,48 @@
 <br>
 <br>
 
+
+
+
+
+
+
+
+<!--
+        <mat-form-field style="width: 70%;">
+          <mat-label>Combos</mat-label>
+          <input type="text" matInput [formControl]="myControl" [matAutocomplete]="auto">
+          <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+            <mat-option *ngFor="let comida of filteredOptions | async" [value]="comida" (click)="selectedComida = comida" (click)="calcular_total(+selectedComida.precio, +cantidad.value)">
+              {{comida.nombre}} >>> Disponible {{comida.cantidad}}  ---  {{comida.precio}} colones 
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+  
+        
+        <mat-form-field style="width: 30%;">
+            <mat-label>Cantidad de combos</mat-label>
+            <input matInput type="number" #cantidad maxlength="2" placeholder="Cantidad de combos" value="1" (change)="calcular_total(+selectedComida.precio, +cantidad.value)">
+        </mat-form-field>
+        -->
+
+
+
+
+
+<!--    
+    <form class="order-form">
+      <mat-form-field>
+        <mat-label>Menu</mat-label>
+        <mat-select [formControl]="menu" multiple>
+          <mat-select-trigger>
+            {{menu.value?.[0] || ''}}
+            <span *ngIf="(menu.value?.length || 0) > 1" class="example-additional-selection">
+              (+{{(menu.value?.length || 0) - 1}} {{menu.value?.length === 2 ? 'other' : 'others'}})
+            </span>
+          </mat-select-trigger>
+          <mat-option *ngFor="let topping of menuList" [value]="topping">{{topping}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+    -->

@@ -1,0 +1,53 @@
+<div class="button-container">
+    <button mat-icon-button style="background-color: aqua;" (click)="home()">
+        <mat-icon>home</mat-icon>
+    </button>   
+</div>
+
+
+<mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
+    <mat-tab label="COMIDAS">
+        <br>
+        <br>
+        <form class="order-form" style="display: flex; justify-content: center;">        
+            <mat-form-field style="width: 30%;">
+                <mat-label>Nombre de comida/bebida</mat-label>
+                <input matInput type="text" #nombre placeholder="Nombre comida/bebida" value="">
+            </mat-form-field>
+            <mat-form-field style="width: 30%;">
+                <mat-label>Precio unitario</mat-label>
+                <input matInput type="number" #precio maxlength="4" placeholder="Precio" value="0">
+            </mat-form-field>
+            <mat-form-field style="width: 30%;">
+                <mat-label>Cantidad disponible</mat-label>
+                <input matInput type="number" #cantidad maxlength="3" placeholder="Cantidad" value="0">
+            </mat-form-field>
+        </form>
+
+        <div style="display: flex; justify-content: center;">
+            <button mat-raised-button (click)="agregar_comida(nombre.value, +precio.value, +cantidad.value)">Agregar Comida</button>
+        </div>
+    </mat-tab>
+
+
+    <mat-tab label="CARTONES">
+        <br>
+        <br>
+        <form class="order-form" style="display: flex; justify-content: center;">        
+            <mat-form-field style="width: 30%;">
+                <mat-label>Cantidad de cartones</mat-label>
+                <input matInput type="number" #cantidad maxlength="3" placeholder="Cantidad" value="1">
+            </mat-form-field>
+            <mat-form-field style="width: 30%;">
+                <mat-label>Precio unitario</mat-label>
+                <input matInput type="number" #precio maxlength="3" placeholder="Precio" value="1000">
+            </mat-form-field>
+        </form>
+
+        <div style="display: flex; justify-content: center;">
+            <button mat-raised-button (click)="actualizar_cartones(+cantidad.value, +precio.value)">Actualizar cantidad de cartones</button>
+        </div>
+    </mat-tab>
+</mat-tab-group>
+
+

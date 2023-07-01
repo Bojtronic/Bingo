@@ -10,19 +10,12 @@ const get = (req, res) => {
 
 
 const add = (req, res) => {
-    const { nombre, precio, cantidad } = req.body;
+    const { id, nombre, cantidad, precio } = req.body;
 
-    pool.query(queries.getById, [id], (error, results) => {
-        const notFound = !results.rows.length;
-        if (notFound) {
-            res.status(404).json("No existe en la base de datos");
-            return;
-        }
-        pool.query(queries.add, [nombre, precio, cantidad], (error, results) => {
-            if (error) throw error;
-            res.status(201).json('creado exitosamente');
-        });
-    }); 
+    pool.query(queries.add, [nombre, cantidad, precio], (error, results) => {
+        if (error) throw error;
+        res.status(201).json('creado exitosamente');
+    });
 };
 
 

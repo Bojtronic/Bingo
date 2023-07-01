@@ -28,3 +28,10 @@ CREATE TABLE compra_comida (
     combo_2 integer,
     total_a_cobrar integer
 );
+
+CREATE TABLE venta (
+    id integer,
+    producto varchar(50),
+    cantidad integer,
+	total integer
+);
