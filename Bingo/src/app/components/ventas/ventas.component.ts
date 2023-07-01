@@ -45,9 +45,7 @@ export class VentasComponent implements OnInit{
         this.comidas.push(comida);
         this.menuList.push(comida.nombre);
       }
-      
-      
-      
+
       this.filteredOptions = this.myControl.valueChanges.pipe(
         startWith(''),
         map(value => {

@@ -13,6 +13,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTableModule} from '@angular/material/table';
 import {MatListModule} from '@angular/material/list';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatMenuModule} from '@angular/material/menu';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -51,6 +52,7 @@ import { AgregarProductosComponent } from './components/agregar-productos/agrega
     ReactiveFormsModule,
     MatListModule,
     MatTabsModule,
+    MatMenuModule,
     NgFor,
     AsyncPipe
   ],

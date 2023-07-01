@@ -12,8 +12,24 @@ import { CompraCartonService } from 'src/app/services/compra_carton/compra-carto
 })
 export class AgregarProductosComponent {
 
+  comidas:comida_model[] = [];
+  comida_actualizada:comida_model = {id:0, nombre:"", cantidad:0, precio:0}
+
   constructor(private router: Router, private compra_cartonService:CompraCartonService, private comidaService:ComidaService) {}
   
+  ngOnInit() {
+    this.comidas = [];
+    let lista: comida_model[] = [];
+  
+    this.comidaService.getComida().subscribe((data: comida_model[]) => {
+      lista = data;
+      for (let comida of lista) {
+        this.comidas.push(comida);
+      }
+
+    });
+  }
+
   home(){
     this.router.navigate(['/home']);
   }
@@ -27,6 +43,16 @@ export class AgregarProductosComponent {
     window.location.reload();
   }
 
+  actualizar_comida(){
+    this.comidaService.editComida(this.comida_actualizada).subscribe(results => {
+      window.location.reload();
+    })
+  }
+
+  seleccionarComida(comida: comida_model) {
+    this.comida_actualizada = comida;
+  }
+
   agregar_comida(nombre:string, precio:number, cantidad:number){
     let comida:comida_model = {id:0, nombre:nombre, cantidad:cantidad, precio:precio}
 
@@ -36,5 +62,11 @@ export class AgregarProductosComponent {
       window.location.reload();
     });
     //window.location.reload();
+  }
+
+  borrar_comidas(){
+    this.comidaService.deleteComida(1).subscribe(results => {
+      window.location.reload();
+    })
   }
 }

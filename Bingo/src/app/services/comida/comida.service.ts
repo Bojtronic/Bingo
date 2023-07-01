@@ -27,7 +27,7 @@ export class ComidaService {
   }
 
   deleteComida(id: number): Observable<comida_model> {
-    return this.http.delete<comida_model>(this.URL_comidas + id);
+    return this.http.delete<comida_model>(this.URL_comidas);
   }
 
   getVenta_Comida(): Observable<venta_model[]> {

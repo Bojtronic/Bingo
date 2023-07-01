@@ -32,16 +32,9 @@ const getById = (req, res) => {
 
 const remove = (req, res) => {
     const id = parseInt(req.params.id);
-    pool.query(queries.getById, [id], (error, results) => {
-        const notFound = !results.rows.length;
-        if (notFound) {
-            res.status(404).json("No existe en la base de datos");
-            return;
-        }
-        pool.query(queries.remove, [id], (error, results) => {
-            if (error) throw error;
-            res.status(200).json("Eliminado exitosamente");
-        });
+    pool.query(queries.remove, (error, results) => {
+        if (error) throw error;
+        res.status(200).json("Eliminado exitosamente");
     });
 };
 
