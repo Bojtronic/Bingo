@@ -9,8 +9,8 @@ import { venta_model } from 'src/app/models/venta_model';
 })
 export class ComidaService {
 
-  URL_comidas: string = "http://localhost:4000/api/comidas/";
-  URL_ventas: string = "http://localhost:4000/api/ventas/"; 
+  URL_comidas: string = "http://localhost:3000/api/comidas/";
+  URL_ventas: string = "http://localhost:3000/api/ventas/"; 
   
   constructor(private http: HttpClient) { }
 

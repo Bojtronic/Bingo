@@ -9,7 +9,7 @@ const ventaRoute = require('./src/routes/venta_route');
 
 
 const app = express();
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 3000;
 
 app.use(express.json());
 

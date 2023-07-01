@@ -9,8 +9,8 @@ import { compra_carton_model } from 'src/app/models/compra_carton_model';
 })
 export class CompraCartonService {
 
-  URL_compra_cartones: string = "http://localhost:4000/api/compra_cartones/";
-  URL_cartones_disponibles: string = "http://localhost:4000/api/cartones/1"; 
+  URL_compra_cartones: string = "http://localhost:3000/api/compra_cartones/";
+  URL_cartones_disponibles: string = "http://localhost:3000/api/cartones/1"; 
   
   constructor(private http: HttpClient) { }
 
