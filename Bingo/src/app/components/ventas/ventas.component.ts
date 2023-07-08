@@ -102,9 +102,25 @@ export class VentasComponent implements OnInit{
       //window.location.reload();
     })
     }
-
-    
   }
+
+  imprimirDatos() {
+    let datos:string = "<br> <br>";
+    for (let comida of this.comidas_compradas) {
+      datos+=comida.nombre+" - Cantidad: "+comida.cantidad+" - Valor: "+comida.precio 
+      datos+="<br>"
+    }
+    const contenido = '<h1>Factura de compra</h1><p>'+datos+'</p>';
+    const ventana = window.open('', '', 'width=800,height=600');
+    if (ventana) {
+      ventana.document.write(contenido);
+      ventana.document.close();
+      ventana.print();
+    } else {
+      console.error('No se pudo abrir la ventana de impresión.');
+    }
+  }
+  
    
 }
 
