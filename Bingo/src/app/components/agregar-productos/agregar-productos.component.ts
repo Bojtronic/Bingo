@@ -15,6 +15,9 @@ export class AgregarProductosComponent {
   comidas:comida_model[] = [];
   comida_actualizada:comida_model = {id:0, nombre:"", cantidad:0, precio:0}
 
+  cantidad_cartones = 0;
+  precio_cartones = 0;
+
   constructor(private router: Router, private compra_cartonService:CompraCartonService, private comidaService:ComidaService) {}
   
   ngOnInit() {
@@ -34,14 +37,25 @@ export class AgregarProductosComponent {
     this.router.navigate(['/home']);
   }
 
-  actualizar_cartones(cantidad:number, precio:number){
-    let carton_update:carton_model = {id:1, cantidad_disponible: cantidad, precio_unitario:precio}
+  actualizar_cartones() {
+    console.log("---------");
+    console.log(this.cantidad_cartones);
+    console.log(this.precio_cartones);
+    console.log("---------");
+
+    let carton_update: carton_model = {
+        id: 1,
+        cantidad_disponible: this.cantidad_cartones,
+        precio_unitario: this.precio_cartones
+    };
+
     this.compra_cartonService.editCartones_disponibles(carton_update).subscribe(results => {
-      console.log("se actualizó la cantidad de cartones")
-      window.location.reload();
+        console.log("Se actualizó la cantidad de cartones");
+        window.location.reload();
     });
-    window.location.reload();
-  }
+    //window.location.reload();
+}
+
 
   actualizar_comida(){
     this.comidaService.editComida(this.comida_actualizada).subscribe(results => {

@@ -82,3 +82,19 @@ Stacktrace:   en System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInter
 2023-06-30 21:38:27 - Finished bingo_api.exe
 2023-06-30 21:38:40 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Bojtronic\Documents\TRABAJO\Bingo\Bingo\Bingo_API\node_modules\node-windows\lib\wrapper.js --file C:\Users\Bojtronic\Documents\TRABAJO\Bingo\Bingo\Bingo_API\index.js --scriptoptions= --log "Bingo_API wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
 2023-06-30 21:38:40 - Started 8736
+2023-07-08 12:27:54 - Stopping bingo_api.exe
+2023-07-08 12:27:54 - ProcessKill 8736
+2023-07-08 12:27:55 - Found child process: 3540 Name: conhost.exe
+2023-07-08 12:27:55 - Found child process: 11008 Name: node.exe
+2023-07-08 12:27:55 - Stopping process 3540
+2023-07-08 12:27:55 - Send SIGINT 3540
+2023-07-08 12:27:55 - SIGINT to 3540 failed - Killing as fallback
+2023-07-08 12:27:55 - Stopping process 11008
+2023-07-08 12:27:55 - Send SIGINT 11008
+2023-07-08 12:27:55 - SIGINT to 11008 failed - Killing as fallback
+2023-07-08 12:27:55 - Stopping process 8736
+2023-07-08 12:27:55 - Send SIGINT 8736
+2023-07-08 12:27:55 - SIGINT to 8736 failed - Killing as fallback
+2023-07-08 12:27:55 - Finished bingo_api.exe
+2023-07-08 12:28:11 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Bojtronic\Documents\TRABAJO\Bingo\Bingo\Bingo_API\node_modules\node-windows\lib\wrapper.js --file C:\Users\Bojtronic\Documents\TRABAJO\Bingo\Bingo\Bingo_API\index.js --scriptoptions= --log "Bingo_API wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2023-07-08 12:28:11 - Started 11040

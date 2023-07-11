@@ -87,16 +87,16 @@
         <form class="order-form" style="display: flex; justify-content: center;">        
             <mat-form-field style="width: 30%;">
                 <mat-label>Cantidad de cartones</mat-label>
-                <input matInput type="number" #cantidad maxlength="3" placeholder="Cantidad" value="1">
+                <input matInput type="number" [(ngModel)]="cantidad_cartones" name="cantidad" maxlength="3" placeholder="Cantidad" value="1">
             </mat-form-field>
             <mat-form-field style="width: 30%;">
                 <mat-label>Precio unitario</mat-label>
-                <input matInput type="number" #precio maxlength="3" placeholder="Precio" value="1000">
+                <input matInput type="number" [(ngModel)]="precio_cartones" name="precio" maxlength="3" placeholder="Precio" value="1000">    
             </mat-form-field>
         </form>
 
         <div style="display: flex; justify-content: center;">
-            <button mat-raised-button (click)="actualizar_cartones(+cantidad.value, +precio.value)">Actualizar cantidad de cartones</button>
+            <button mat-raised-button (click)="actualizar_cartones()">Actualizar cantidad de cartones</button>
         </div>
     </mat-tab>
 </mat-tab-group>
